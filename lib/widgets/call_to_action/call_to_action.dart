@@ -1,27 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
+import 'package:web_flutter/widgets/call_to_action/call_to_action_mobile_desktop.dart';
+import 'package:web_flutter/widgets/call_to_action/call_to_action_tablet_desktop.dart';
 
 class CallToAction extends StatelessWidget {
   final String title;
   CallToAction(this.title);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 60,
-        vertical: 15,
-      ),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w800,
-          color: Colors.white,
-        ),
-      ),
-      decoration: BoxDecoration(
-        color: Colors.green,
-        borderRadius: BorderRadius.circular(5)
-      ),
+    return ScreenTypeLayout(
+      mobile: CallToActionMobileDesktop(title),
+      tablet: CallToActionTabletDesktop(title),
     );
   }
 }
