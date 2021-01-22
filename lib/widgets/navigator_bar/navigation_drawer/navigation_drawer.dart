@@ -7,18 +7,33 @@ class NavigationDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      
       decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(color: Colors.black12, blurRadius: 16)
-        ]
+          color: Colors.white,
+          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 16)]),
+      child: Drawer(
+        child: Column(
+          children: [
+            NavigationDrawerHeader(),
+            DrawerItem('Episodes', Icons.videocam),
+            DrawerItem('About', Icons.help),
+          ],
+        ),
       ),
-      child: Column(children: [
-        NavigationDrawerHeader(),
-        DrawerItem('Episodes',Icons.videocam),
-        DrawerItem('About',Icons.help),
-      ],),
     );
+
+    // return Container(
+    //   width: 300,
+    //   decoration: BoxDecoration(
+    //     color: Colors.white,
+    //     boxShadow: [
+    //       BoxShadow(color: Colors.black12, blurRadius: 16)
+    //     ]
+    //   ),
+    //   child: Column(children: [
+    //     NavigationDrawerHeader(),
+    //     DrawerItem('Episodes',Icons.videocam),
+    //     DrawerItem('About',Icons.help),
+    //   ],),
+    // );
   }
 }

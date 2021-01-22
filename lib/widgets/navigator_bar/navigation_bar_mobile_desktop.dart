@@ -12,7 +12,9 @@ class NavigationBarMobileDesktop extends StatelessWidget {
         children: [
           IconButton(
             icon: Icon(Icons.menu),
-            onPressed: () {},
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
           ),
           NavBarLogo()
         ],
