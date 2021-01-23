@@ -4,7 +4,8 @@ import 'package:web_flutter/widgets/navigator_bar/navbar_item.dart';
 class DrawerItem extends StatelessWidget {
   final String title;
   final IconData icon;
-  const DrawerItem(this.title, this.icon);
+  final String navigationPath;
+  const DrawerItem(this.title, this.icon, this.navigationPath);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,7 +13,7 @@ class DrawerItem extends StatelessWidget {
       child: Row(children: [
         Icon(icon),
         SizedBox(width: 30,),
-        NavBarItem(title),
+        NavBarItem(title, navigationPath),
       ],),
       
     );
