@@ -3,14 +3,15 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:web_flutter/locator.dart';
 import 'package:web_flutter/routing/route_names.dart';
 import 'package:web_flutter/routing/router.dart';
-import 'package:web_flutter/services/navigation_services.dart';
-import 'package:web_flutter/views/home/home_content_desktop.dart';
-import 'package:web_flutter/views/home/home_content_mobile.dart';
+import 'package:web_flutter/services/navigation_service.dart';
 import 'package:web_flutter/widgets/centered_view/centered_view.dart';
+import 'package:web_flutter/widgets/navigation_bar/navigation_bar.dart';
 import 'package:web_flutter/widgets/navigation_drawer/navigation_drawer.dart';
-import 'package:web_flutter/widgets/navigator_bar/navigation_bar.dart';
+
 
 class LayoutTemplate extends StatelessWidget {
+  const LayoutTemplate({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
@@ -21,15 +22,15 @@ class LayoutTemplate extends StatelessWidget {
         backgroundColor: Colors.white,
         body: CenteredView(
           child: Column(
-            children: [
+            children: <Widget>[
               NavigationBar(),
               Expanded(
                 child: Navigator(
-                  key: locator<NavigationServices>().navigatorKey,
+                  key: locator<NavigationService>().navigatorKey,
                   onGenerateRoute: generateRoute,
                   initialRoute: HomeRoute,
                 ),
-              ),
+              )
             ],
           ),
         ),

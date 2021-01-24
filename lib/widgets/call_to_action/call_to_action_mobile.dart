@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:web_flutter/constants/app_colors.dart';
 
-class CallToActionTabletDesktop extends StatelessWidget {
+class CallToActionMobile extends StatelessWidget {
   final String title;
-  const CallToActionTabletDesktop(this.title);
+  const CallToActionMobile(this.title);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+      height: 60,
+      alignment: Alignment.center,
       child: Text(
         title,
         style: TextStyle(
